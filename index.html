@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="description" content="zampoña virtual">
+<meta name="keywords" content="zampoña, bolivia, peru, ecuador, colombia, zampoña virtual, rondador, capador, andes, siku, pan flute, pan pipe">
+<meta name="author" content="jerry">
+<meta charset="UTF-8">
+<title>Zampoña Virtual</title>
+<link rel="shortcut icon" href="img/favicon.ico">
+
+<style type="text/css">
+
+body {
+	background-image:url('img/retina_wood.png');
+	font:15px arial,sans-serif;
+
+}
+
+</style>
+
+</head>
+
+<body onkeydown="whichButton(event)" onkeyup="suelta(event)" onload="carga_completa()">
+
+<div style="margin: 0 auto;width:550px;height:50px;">
+<img src="img/Venezuela-32.png" title="Venezuela" style="float:left" />
+<img src="img/Colombia-32.png" title="Colombia" style="float:left" />
+<img src="img/Ecuador-32.png" title="Ecuador" style="float:left;margin-right:10px;" />
+
+<h1 style="text-align:center;float:left;margin:0px;">ZAMPOÑA VIRTUAL</h1>
+
+<img src="img/Peru-32.png" title="Perú" style="float:left;margin-left:10px;" />
+<img src="img/Bolivia-32.png" title="Bolivia" style="float:left" />
+<img src="img/Chile-32.png" title="Chile" style="float:left" />
+<img src="img/Argentina-32.png" title="Argentina" style="float:left" />
+</div>
+
+<!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="small" data-annotation="inline" data-width="300"></div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  window.___gcfg = {lang: 'es-419'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+<p id="loading" style="text-align:center;">Cargando imágenes y sonidos...</p>
+
+<b>Historial de notas:</b><br />
+
+<span id="mostrar" style="display:none;cursor:default;" onclick="show()"><small>Mostrar</small></span>
+
+<div id="cont_hist">
+	<span onclick="hide()" style="cursor:default;"><small>Ocultar</small></span>
+	<div id="historial" style="background-color:white;width:100%;height:100px;overflow-y:auto;"></div>
+	<button type="button" onclick="limpiar()">Limpiar</button>
+</div>
+
+<hr />
+
+<div style="margin: 0 auto;width:450px;">
+<img id="arca1" onmousedown="nota_down('arca1')" onmouseup="nota_up('arca1')" src="img/pipa.jpg" title="SI" />
+<img id="arca2" onmousedown="nota_down('arca2')" onmouseup="nota_up('arca2')" src="img/pipa.jpg" title="SOL" />
+<img id="arca3" onmousedown="nota_down('arca3')" onmouseup="nota_up('arca3')" src="img/pipa.jpg" title="MI" />
+<img id="arca4" onmousedown="nota_down('arca4')" onmouseup="nota_up('arca4')" src="img/pipa.jpg" title="DO" />
+<img id="arca5" onmousedown="nota_down('arca5')" onmouseup="nota_up('arca5')" src="img/pipa.jpg" title="LA" />
+<img id="arca6" onmousedown="nota_down('arca6')" onmouseup="nota_up('arca6')" src="img/pipa.jpg" title="FA#" />
+<img id="arca7" onmousedown="nota_down('arca7')" onmouseup="nota_up('arca7')" src="img/pipa.jpg" title="RE" />
+</div>
+
+<div style="margin:0 auto;width:450px;">
+<img src="img/mitad4.jpg" />
+<img id="ira1" onmousedown="nota_down('ira1')" onmouseup="nota_up('ira1')" src="img/pipa.jpg" title="la" />
+<img id="ira2" onmousedown="nota_down('ira2')" onmouseup="nota_up('ira2')" src="img/pipa.jpg" title="fa#" />
+<img id="ira3" onmousedown="nota_down('ira3')" onmouseup="nota_up('ira3')" src="img/pipa.jpg" title="re" />
+<img id="ira4" onmousedown="nota_down('ira4')" onmouseup="nota_up('ira4')" src="img/pipa.jpg" title="si" />
+<img id="ira5" onmousedown="nota_down('ira5')" onmouseup="nota_up('ira5')" src="img/pipa.jpg" title="sol" />
+<img id="ira6" onmousedown="nota_down('ira6')" onmouseup="nota_up('ira6')" src="img/pipa.jpg" title="mi" />
+<img src="img/mitad1.jpg" />
+</div>
+
+<div style="margin:0 auto;width:450px;">
+<img src="img/mitad5.jpg" />
+<img src="img/amarrador.jpg" />
+<img src="img/amarrador.jpg" />
+<img src="img/amarrador.jpg" />
+<img src="img/amarrador.jpg" />
+<img src="img/amarrador.jpg" />
+<img src="img/amarrador.jpg" />
+<img src="img/mitad2.jpg" />
+</div>
+
+<div style="margin:0 auto;width:450px;">
+<img src="img/mitad6.jpg" style="margin-bottom:159px;" />
+<img src="img/1.jpg" style="margin-bottom:159px;" />
+<img src="img/2.jpg" style="margin-bottom:133px;" />
+<img src="img/3.jpg" style="margin-bottom:99px;" />
+<img src="img/4.jpg" style="margin-bottom:66px;" />
+<img src="img/5.jpg" style="margin-bottom:33px;" />
+<img src="img/pan.jpg" />
+<img src="img/mitad3.jpg" />
+</div>
+
+<hr />
+
+<p>
+<b>Requerimientos:</b>
+<img src="img/Chrome-32.png" width="16" height="16" title="Google Chrome" />
+<img src="img/Opera-32.png" width="16" height="16" title="Opera" />
+<!--<img src="img/Internet Explorer-32.png" width="17" height="17" title="Internet Explorer 9, 10" />-->
+</p>
+
+<p><b>Configuración:</b></p>
+<table border="1" width="100%">
+	<tr>
+		<th>TECLAS</th>
+		<th>A</th>
+		<th>S</th>
+		<th>D</th>
+		<th>F</th>
+		<th>G</th>
+		<th>H</th>
+		<th>J</th>
+	</tr>
+	<tr style="text-align:center;">
+		<th>NOTAS</th>
+		<td>SI</td>
+		<td>SOL</td>
+		<td>MI</td>
+		<td>DO</td>
+		<td>LA</td>
+		<td>FA#</td>
+		<td>RE</td>
+	</tr>
+	<tr>
+		<th>TECLAS</th>
+		<th>Z</th>
+		<th>X</th>
+		<th>C</th>
+		<th>V</th>
+		<th>B</th>
+		<th>N</th>
+	</tr>
+	<tr style="text-align:center;">
+		<th>NOTAS</th>
+		<td>la</td>
+		<td>fa#</td>
+		<td>re</td>
+		<td>si</td>
+		<td>sol</td>
+		<td>mi</td>
+	</tr>
+
+</table>
+
+<!--ARKA-->
+<audio id="arca_si"><source src="sounds/SI.wav" type="audio/wav"><source src="sounds/SI.mp3" type="audio/mpeg"><h1>Actualiza tu navegador!</h1></audio>
+<audio id="arca_sol"><source src="sounds/SOL.wav" type="audio/wav"><source src="sounds/SOL.mp3" type="audio/mpeg"></audio>
+<audio id="arca_mi"><source src="sounds/MI.wav" type="audio/wav"><source src="sounds/MI.mp3" type="audio/mpeg"></audio>
+<audio id="arca_do"><source src="sounds/DO.wav" type="audio/wav"><source src="sounds/DO.mp3" type="audio/mpeg"></audio>
+<audio id="arca_la"><source src="sounds/LA.wav" type="audio/wav"><source src="sounds/LA.mp3" type="audio/mpeg"></audio>
+<audio id="arca_fa"><source src="sounds/FA.wav" type="audio/wav"><source src="sounds/FA.mp3" type="audio/mpeg"></audio>
+<audio id="arca_re"><source src="sounds/RE.wav" type="audio/wav"><source src="sounds/RE.mp3" type="audio/mpeg"></audio>
+
+<!--IRA-->
+<audio id="ira_la"><source src="sounds/ila.wav" type="audio/wav"><source src="sounds/ila.mp3" type="audio/mpeg"></audio>
+<audio id="ira_fa"><source src="sounds/ifa.wav" type="audio/wav"><source src="sounds/ifa.mp3" type="audio/mpeg"></audio>
+<audio id="ira_re"><source src="sounds/ire.wav" type="audio/wav"><source src="sounds/ire.mp3" type="audio/mpeg"></audio>
+<audio id="ira_si"><source src="sounds/isi.wav" type="audio/wav"><source src="sounds/isi.mp3" type="audio/mpeg"></audio>
+<audio id="ira_sol"><source src="sounds/isol.wav" type="audio/wav"><source src="sounds/isol.mp3" type="audio/mpeg"></audio>
+<audio id="ira_mi"><source src="sounds/imi.wav" type="audio/wav"><source src="sounds/imi.mp3" type="audio/mpeg"></audio>
+
+<script src="motor.js"></script>
+
+</body>
+</html>
